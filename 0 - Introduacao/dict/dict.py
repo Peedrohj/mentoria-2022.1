@@ -9,3 +9,6 @@ dicionario_de_pessoas: Dict = {
         "idade": 21
     }
 }
+
+# Buscar as chaves do dicionário
+dicionario_de_pessoas.values()
