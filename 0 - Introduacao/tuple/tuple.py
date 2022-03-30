@@ -12,3 +12,5 @@ tupla_de_objetos: Tuple[dict] = ({
 })
 tupla_de_lista: Tuple[List] = ([1, 2, 3, 3, 4, 5],
                                ["a", "b", "c", "d", "e"])
+
+tupla_exemplo_de_estado = "PE", "Pernambuco"
