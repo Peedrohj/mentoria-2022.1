@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  mentoria-app: 
+    build: . 
+    container_name: mentoria-app 
+    volumes:
+      - .:/home/python/app:e
