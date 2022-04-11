@@ -33,6 +33,3 @@ lista_de_numeros.pop()
 # Remover um elemento pelo index
 lista_de_numeros.pop(1)
 [1, 3, 3, 4, 5]
-
-# 
-next(x for x in lista_de_objetos)
