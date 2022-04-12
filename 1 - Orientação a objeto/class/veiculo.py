@@ -1,24 +1,27 @@
+from abc import abstractmethod
 from dataclasses import dataclass, field
+from datetime import datetime
+
+@dataclass(kw_only=True, frozen=True)
+class BaseClass:
+    def set(self, nome: str, value: any):
+        object.__setattr__(self, nome, value)
 
 
-@dataclass()
-class Veiculo:
-    modelo: str
-    cor: str
-    __id: int = field(init=False)
-    __velocidade: int = field(init=False, default=0)
+@dataclass(kw_only=True, frozen=True)
+class Veiculo(BaseClass):
+    velocidade: int = field(init=True, default=None)
+    acelaracao: int = field(init=True, default=None)
 
-    @property
-    def velocidade(self) -> int:
-        return self.__velocidade
+    id: int = field(init=True, default=None)
+    modelo: str = field(init=True, default=None)
+    cor: str = field(init=True, default=None)
 
-    @property
-    def id(self) -> int:
-        return self.__id
+    def atualizarModelo(self, value):
+        self.set(nome="modelo", value=value)
 
-    @velocidade.setter
-    def velocidade(self, v: int) -> None:
-        self._velocidade = v
-
-carro: Veiculo =  Veiculo(modelo="Celta", cor="Preto")
-carro.__id
+carro: Veiculo = Veiculo(modelo="Celta", cor="Preto", velocidade=10, id=1)
+carro.atualizarModelo("Gol")
+carro.velocidade
+carro.id
+carro.modelo

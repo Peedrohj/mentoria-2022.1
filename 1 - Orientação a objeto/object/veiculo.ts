@@ -7,8 +7,16 @@ const carroAmarelo: Partial<Veiculo> = {
   velocidade: 10,
 };
 
-const carroAzul: Veiculo = new Veiculo(10, "Gol", "Azul");
-const carroPreto: Veiculo = new Veiculo(10, "Celta", "Preto");
+const carroAzul: Veiculo = new Veiculo({
+  modelo: "Gol",
+  velocidade: 12,
+  cor: "Amarelo",
+});
+const carroPreto: Veiculo = new Veiculo({
+  modelo: "Celta",
+  velocidade: 10,
+  cor: "Preto",
+});
 
 carroAmarelo.velocidade = 20;
 carroAzul.velocidade = 40;
