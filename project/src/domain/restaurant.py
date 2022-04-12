@@ -16,7 +16,5 @@ class Restaurant(BaseClass):
     description: Optional[str] = None
     is_active: Optional[bool] = True
 
-    opening_days: list[OpeningDay] = field(init=True)
-
     def __repr__(self) -> str:
         return f"{self.name} - {self.address}"
